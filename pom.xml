@@ -65,7 +65,7 @@
         <android.version>4.4_r1</android.version>
         <android.platform>19</android.platform>
 
-        <abs.version>4.3.1</abs.version>
+        <abs.version>4.4.0</abs.version>
 
         <android-support.version>r7</android-support.version>
     </properties>
@@ -103,7 +103,7 @@
                 <plugin>
                     <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                     <artifactId>android-maven-plugin</artifactId>
-                    <version>3.6.0</version>
+                    <version>3.8.0</version>
                     <configuration>
                         <sdk>
                             <platform>${android.platform}</platform>
