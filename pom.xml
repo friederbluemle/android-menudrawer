@@ -162,7 +162,7 @@
                             <goal>exec</goal>
                         </goals>
                         <configuration>
-                            <executable>gradle</executable>
+                            <executable>gradlew</executable>
                             <arguments>
                                 <argument>-PlibVersion=${project.version}</argument>
                                 <argument>clean</argument>
