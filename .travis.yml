@@ -12,9 +12,10 @@ before_install:
   - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch; fi
   - wget http://dl.google.com/android/android-sdk_r21-linux.tgz
   - tar -zxf android-sdk_r21-linux.tgz
+  - chmod +x gradlew
   - export ANDROID_HOME=`pwd`/android-sdk-linux
   - export PATH=${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${PATH}
-  - android update sdk --filter platform-tools,android-16 --no-ui --force
+  - android update sdk --filter platform-tools,android-19 --no-ui --force
 
 install:
   - "mvn package --quiet -DskipTests"
