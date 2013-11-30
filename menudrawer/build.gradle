@@ -1,6 +1,5 @@
 apply plugin: 'android-library'
 apply plugin: 'maven'
-apply plugin: 'signing'
 
 android {
     sourceSets {
@@ -22,10 +21,16 @@ android {
 
 ext {
     artifactId = 'menudrawer'
+    isReleaseVersion = !version.endsWith("SNAPSHOT")
 }
 
-signing {
-    sign configurations.archives
+if (isReleaseVersion) {
+    //activate signing only for release versions
+    apply plugin: 'signing'
+
+    signing {
+        sign configurations.archives
+    }
 }
 
 configurations {
