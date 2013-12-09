@@ -9,10 +9,10 @@ buildscript {
 }
 
 ext.groupId = 'net.simonvt.messagebar'
-ext.compileSdkVersion = 18
-ext.buildToolsVersion = "18.1.0"
+ext.compileSdkVersion = 19
+ext.buildToolsVersion = "19.0.0"
 ext.minSdkVersion = 7;
-ext.targetSdkVersion = 18;
+ext.targetSdkVersion = 19;
 
 allprojects {
     repositories {
@@ -23,5 +23,5 @@ allprojects {
         options.encoding = "UTF-8"
     }
 
-    version = '3.0.4-SNAPSHOT'
+    version = '3.0.5-SNAPSHOT'
 }

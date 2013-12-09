@@ -10,11 +10,13 @@ notifications:
 before_install:
   - sudo apt-get update -qq
   - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch; fi
-  - wget http://dl.google.com/android/android-sdk_r21-linux.tgz
-  - tar -zxf android-sdk_r21-linux.tgz
+  - wget http://dl.google.com/android/android-sdk_r22.3-linux.tgz
+  - tar -zxf android-sdk_r22.3-linux.tgz
+  - chmod +x gradlew
   - export ANDROID_HOME=`pwd`/android-sdk-linux
   - export PATH=${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${PATH}
-  - android update sdk --filter platform-tools,android-16 --no-ui --force
+  - echo yes |android update sdk --no-ui --all --force --filter platform-tools,build-tools-19.0.0,android-19,extra-android-support,extra-android-m2repository,extra-google-m2repository
+  - mvn install:install-file -Dfile=${ANDROID_HOME}/platforms/android-19/android.jar -DgroupId=android -DartifactId=android -Dversion=4.4_r1 -Dpackaging=jar -DgeneratePom=true
 
 install:
   - "mvn package --quiet -DskipTests"

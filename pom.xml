@@ -62,10 +62,10 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <java.version>1.6</java.version>
-        <android.version>4.1.1.4</android.version>
-        <android.platform>16</android.platform>
+        <android.version>4.4_r1</android.version>
+        <android.platform>19</android.platform>
 
-        <abs.version>4.3.1</abs.version>
+        <abs.version>4.4.0</abs.version>
 
         <android-support.version>r7</android-support.version>
     </properties>
@@ -73,7 +73,7 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.google.android</groupId>
+                <groupId>android</groupId>
                 <artifactId>android</artifactId>
                 <version>${android.version}</version>
             </dependency>
@@ -103,7 +103,7 @@
                 <plugin>
                     <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                     <artifactId>android-maven-plugin</artifactId>
-                    <version>3.6.0</version>
+                    <version>3.8.0</version>
                     <configuration>
                         <sdk>
                             <platform>${android.platform}</platform>
@@ -162,7 +162,7 @@
                             <goal>exec</goal>
                         </goals>
                         <configuration>
-                            <executable>gradle</executable>
+                            <executable>gradlew</executable>
                             <arguments>
                                 <argument>-PlibVersion=${project.version}</argument>
                                 <argument>clean</argument>
