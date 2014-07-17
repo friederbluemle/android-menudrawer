@@ -1,4 +1,4 @@
-language: java
+language: android
 
 branches:
   excludes:
@@ -8,15 +8,13 @@ notifications:
   email: false
 
 before_install:
-  - sudo apt-get update -qq
-  - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch; fi
-  - wget http://dl.google.com/android/android-sdk_r22.3-linux.tgz
-  - tar -zxf android-sdk_r22.3-linux.tgz
+  - sudo mv /usr/local/android-sdk/tools/android-* /usr/local/bin
+  - android-update-sdk --components='platform-tools,tools' --accept-licenses='.+'
+  - android-update-sdk --components='build-tools-20.0.0' --accept-licenses='.+'
+  - android-update-sdk --components='android-20' --accept-licenses='.+'
+  - android-update-sdk --components='extra-android-support,extra-android-m2repository,extra-google-m2repository' --accept-licenses='.+'
   - chmod +x gradlew
-  - export ANDROID_HOME=`pwd`/android-sdk-linux
-  - export PATH=${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${PATH}
-  - echo yes |android update sdk --no-ui --all --force --filter platform-tools,build-tools-19.0.0,android-19,extra-android-support,extra-android-m2repository,extra-google-m2repository
-  - mvn install:install-file -Dfile=${ANDROID_HOME}/platforms/android-19/android.jar -DgroupId=android -DartifactId=android -Dversion=4.4_r1 -Dpackaging=jar -DgeneratePom=true
+  - mvn install:install-file -Dfile=${ANDROID_HOME}/platforms/android-20/android.jar -DgroupId=android -DartifactId=android -Dversion=4.4W_r1 -Dpackaging=jar -DgeneratePom=true
 
 install:
   - "mvn package --quiet -DskipTests"
