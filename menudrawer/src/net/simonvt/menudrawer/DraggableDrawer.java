@@ -365,7 +365,7 @@ public abstract class DraggableDrawer extends MenuDrawer {
         if (velocity > 0) {
             duration = 4 * Math.round(1000.f * Math.abs((float) dx / velocity));
         } else {
-            duration = (int) (600.f * Math.abs((float) dx / mMenuSize));
+            duration = (int) (300.f * Math.abs((float) dx / mMenuSize));
         }
 
         duration = Math.min(duration, mMaxAnimationDuration);
