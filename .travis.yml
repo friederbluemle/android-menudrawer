@@ -7,14 +7,14 @@ branches:
 notifications:
   email: false
 
+android:
+  components:
+    - build-tools-21.0.1
+    - android-21
+    - extra-android-support,extra-android-m2repository,extra-google-m2repository
+
 before_install:
-  - sudo mv /usr/local/android-sdk/tools/android-* /usr/local/bin
-  - android-update-sdk --components='platform-tools,tools' --accept-licenses='.+'
-  - android-update-sdk --components='build-tools-20.0.0' --accept-licenses='.+'
-  - android-update-sdk --components='android-20' --accept-licenses='.+'
-  - android-update-sdk --components='extra-android-support,extra-android-m2repository,extra-google-m2repository' --accept-licenses='.+'
-  - chmod +x gradlew
-  - mvn install:install-file -Dfile=${ANDROID_HOME}/platforms/android-20/android.jar -DgroupId=android -DartifactId=android -Dversion=4.4W_r1 -Dpackaging=jar -DgeneratePom=true
+  - mvn install:install-file -Dfile=${ANDROID_HOME}/platforms/android-21/android.jar -DgroupId=android -DartifactId=android -Dversion=5.0_r1 -Dpackaging=jar -DgeneratePom=true
 
 install:
   - "mvn package --quiet -DskipTests"

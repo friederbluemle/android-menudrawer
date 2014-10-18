@@ -62,8 +62,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <java.version>1.6</java.version>
-        <android.version>4.4W_r1</android.version>
-        <android.platform>20</android.platform>
+        <android.version>5.0_r1</android.version>
+        <android.platform>21</android.platform>
 
         <abs.version>4.4.0</abs.version>
 
