@@ -10,7 +10,7 @@ buildscript {
 
 ext.groupId = 'net.simonvt.messagebar'
 ext.compileSdkVersion = 21
-ext.buildToolsVersion = "21.1.1"
+ext.buildToolsVersion = "21.1.2"
 ext.minSdkVersion = 7;
 ext.targetSdkVersion = 21;
 
